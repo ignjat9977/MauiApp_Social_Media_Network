@@ -44,8 +44,8 @@ public partial class App : Application
         }
         else
         {
-            MainPage = new HomePage();
-            //MainPage = new MainPage();
+            //MainPage = new HomePage();
+            MainPage = new MainPage();
         }
 
         base.OnStart();

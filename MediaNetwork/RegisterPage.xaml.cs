@@ -24,12 +24,12 @@ public partial class RegisterPage : ContentPage
             LastName = this.LastName.Text,
             Email = this.Email.Text,
             Password = this.Password.Text,
-            DateOfBirth = this.DateOfBirth.Date,
+            DateOfBirth = new DateTime(1999,2,12),
             RoleId = 1
         };
-        if (service.Register(dto))
+        if (!service.Register(dto))
         {
-            await Navigation.PushAsync(new UserProfilePage());
+            Application.Current.MainPage = new MainPage();
         }
 
     }

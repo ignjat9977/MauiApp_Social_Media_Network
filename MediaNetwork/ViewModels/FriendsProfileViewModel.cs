@@ -61,7 +61,6 @@ namespace MediaNetwork.ViewModels
             {
                 Pagination.Add(new Business.Dto.Pagination { CurrentPage = i });
             }
-            SelectedItem.Value = Pagination.ElementAt(Posts.CurrentPage - 1);
             AnyItems.Value = true;
             if (Posts.Items.Any())
             {
