@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaNetwork.SingleGroupPage"
+             Title="SingleGroupPage"
+             xmlns:locale="clr-namespace:MediaNetwork.ViewModels">
+
+
+    <ContentPage.BindingContext>
+        <locale:SingleGroupViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30">
+            <Entry IsVisible="false" x:Name="Id" Text="{Binding Id.Value}"/>
+            <Button Text="Back To Home" TextColor="White" BackgroundColor="Orange" Clicked="Button_Clicked"/>
+            <Label 
+            Text="Name:"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <Label 
+            x:Name="Name"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <Label 
+            Text="Description:"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <Label 
+            x:Name="Description"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

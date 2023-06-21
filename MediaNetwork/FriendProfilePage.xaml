@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaNetwork.FriendProfilePage"
+             Title="FriendProfilePage"
+             xmlns:locale="clr-namespace:MediaNetwork.ViewModels">
+    <ContentPage.BindingContext>
+        <locale:FriendsProfileViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <StackLayout>
+                <Button Text="Go to Home Page" Command="{Binding BackToHomeCommand}" BackgroundColor="Orange"/>
+                <Grid VerticalOptions="Start" HorizontalOptions="Start" Padding="20" RowSpacing="30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border WidthRequest="100"
+                    HeightRequest="100"
+                    Stroke="{AppThemeBinding Light=Orange, Dark=Orange}"
+                    StrokeThickness="4"
+                    BackgroundColor="{AppThemeBinding Light=Orange, Dark=Orange}"
+                    StrokeShape="RoundRectangle 50">
+
+                        <Image
+                    Source="{Binding Friend.Value.ImageUrl}"
+                    HeightRequest="98"
+                    WidthRequest="98" />
+                    </Border>
+
+
+                    <Grid Grid.Row="1" ColumnSpacing="30" RowSpacing="15" >
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Grid.Row="0" TextColor="Orange" Text="First" FontSize="12"/>
+                        <Label Grid.Column="1" Grid.Row="0" TextColor="Black" Text="{Binding Friend.Value.FirstName}" FontAttributes="Bold"/>
+                        <Label Grid.Column="0" Grid.Row="1" Text="Last" TextColor="Orange" FontSize="12"/>
+                        <Label Grid.Column="1"  Grid.Row="1" TextColor="Black" Text="{Binding Friend.Value.LastName}" FontAttributes="Bold"/>
+                        <Label Grid.Column="0"  Grid.Row="2" Text="Mail" TextColor="Orange" FontSize="12"/>
+                        <Label Grid.Column="1"  Grid.Row="2" TextColor="Black" Text="{Binding Friend.Value.Email}" FontAttributes="Bold"/>
+
+                    </Grid>
+                </Grid>
+                <StackLayout HorizontalOptions="Start" Padding="10">
+                    <Label Text="Post section"/>
+                    <Label Text="Search"/>
+                    <Entry Text="{Binding Keyword.Value}" Placeholder="Type here keyword to search!" TextColor="Orange"/>
+                    <Picker Title="Select a page"
+                    ItemsSource="{Binding Pagination}"
+                    ItemDisplayBinding="{Binding CurrentPage}"
+                    SelectedItem="{Binding SelectedItem.Value}" />
+                    <Button Text="Search Button" TextColor="Orange" Command="{Binding GetPostsCommand}"/>
+                    <Border StrokeThickness="5" BackgroundColor="Black"/>
+                    <CollectionView ItemsSource="{Binding Posts.Items}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,10,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.RowSpan="2"
+                       Source="{Binding PathToShow}"
+                       Aspect="AspectFill"
+                       HeightRequest="60"
+                       WidthRequest="60" 
+                       IsVisible="{Binding ShowPicture}"/>
+                                    <Label Grid.Column="1" Grid.Row="0" 
+                                    Grid.ColumnSpan="1">
+                                        <Label.Style>
+                                            <Style TargetType="Label">
+                                                <Setter Property="FontAttributes" Value="Bold" />
+                                                <Style.Triggers>
+                                                    <DataTrigger TargetType="Label"
+                                                     Binding="{Binding ShowPicture}"
+                                                     Value="True">
+                                                        <Setter Property="Grid.ColumnSpan" Value="2" />
+                                                        <Setter Property="FontAttributes" Value="Bold" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Label.Style>
+                                        <Label.Text>
+                                            <Binding Path="Title" />
+                                        </Label.Text>
+                                    </Label>
+                                    <Label Grid.Row="1"  Grid.Column="1"
+                                    Grid.ColumnSpan="1">
+                                        <Label.Style>
+                                            <Style TargetType="Label">
+                                                <Setter Property="FontAttributes" Value="Italic" />
+                                                <Style.Triggers>
+                                                    <DataTrigger TargetType="Label"
+                                                     Binding="{Binding ShowPicture}"
+                                                     Value="True">
+                                                        <Setter Property="Grid.ColumnSpan" Value="2" />
+                                                        <Setter Property="FontAttributes" Value="Italic" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Label.Style>
+                                        <Label.Text>
+                                            <Binding Path="Content" />
+                                        </Label.Text>
+                                    </Label>
+                                    <Border StrokeThickness="2" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Orange"/>
+                                </Grid>
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <Label Text="No Items" IsVisible="{Binding AnyItems.Value}"/>
+                </StackLayout>
+            </StackLayout>
+        
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

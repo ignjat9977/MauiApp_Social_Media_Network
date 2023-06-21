@@ -1,0 +1,131 @@
+is_global = true
+build_property.TargetFramework = net6.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MediaNetwork
+build_property.ProjectDir = C:\Users\ignja\Desktop\Android\MediaNetwork\MediaNetwork\
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/Business/Components/Friend.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.Business.Components.Friend.xaml
+build_metadata.AdditionalFiles.TargetPath = Business\Components\Friend.xaml
+build_metadata.AdditionalFiles.RelativePath = Business\Components\Friend.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/Business/Components/Post.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.Business.Components.Post.xaml
+build_metadata.AdditionalFiles.TargetPath = Business\Components\Post.xaml
+build_metadata.AdditionalFiles.RelativePath = Business\Components\Post.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/CreatePostPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.CreatePostPage.xaml
+build_metadata.AdditionalFiles.TargetPath = CreatePostPage.xaml
+build_metadata.AdditionalFiles.RelativePath = CreatePostPage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/FriendFriendsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.FriendFriendsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = FriendFriendsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = FriendFriendsPage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/FriendHomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.FriendHomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = FriendHomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = FriendHomePage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/FriendProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.FriendProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = FriendProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = FriendProfilePage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/FriendsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.FriendsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = FriendsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = FriendsPage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/GroupPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.GroupPage.xaml
+build_metadata.AdditionalFiles.TargetPath = GroupPage.xaml
+build_metadata.AdditionalFiles.RelativePath = GroupPage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = HomePage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/MessagePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.MessagePage.xaml
+build_metadata.AdditionalFiles.TargetPath = MessagePage.xaml
+build_metadata.AdditionalFiles.RelativePath = MessagePage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/RegisterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.RegisterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = RegisterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = RegisterPage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/SearchPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.SearchPage.xaml
+build_metadata.AdditionalFiles.TargetPath = SearchPage.xaml
+build_metadata.AdditionalFiles.RelativePath = SearchPage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/SingleGroupPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.SingleGroupPage.xaml
+build_metadata.AdditionalFiles.TargetPath = SingleGroupPage.xaml
+build_metadata.AdditionalFiles.RelativePath = SingleGroupPage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/UpdatePostPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.UpdatePostPage.xaml
+build_metadata.AdditionalFiles.TargetPath = UpdatePostPage.xaml
+build_metadata.AdditionalFiles.RelativePath = UpdatePostPage.xaml
+
+[C:/Users/ignja/Desktop/Android/MediaNetwork/MediaNetwork/UserProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MediaNetwork.UserProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = UserProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = UserProfilePage.xaml

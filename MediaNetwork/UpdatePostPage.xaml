@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaNetwork.UpdatePostPage"
+             Title="UpdatePostPage"
+             xmlns:locale="clr-namespace:MediaNetwork.ViewModels">
+
+    <ContentPage.BindingContext>
+        <locale:UpdatePostViewModel/>
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout Padding="30">
+        <Button BackgroundColor="Orange" Text="Back to Home" TextColor="White" Command="{Binding BackToHomeCommand}"/>
+
+
+        <Entry x:Name="Id" Text="{Binding Id}" IsVisible="false"/>
+
+        <Label Text="Update post" TextColor="Orange"/>
+
+        <Label Text="Title" TextColor="Orange"/>
+        <Entry x:Name="Title" Text="{Binding Title.Value}"/>
+        <Label TextColor="Red" Text="{Binding Title.Error}"/>
+
+        <Label Text="Content" TextColor="Orange"/>
+        <Entry x:Name="Content" Text="{Binding Content.Value}"/>
+        <Label TextColor="Red" Text="{Binding Content.Error}"/>
+
+        <Button IsEnabled="{Binding IsUpdateButtonEnabled}" Command="{Binding UpdatePostCommand}" Text="Update"/>
+    </VerticalStackLayout>
+</ContentPage>

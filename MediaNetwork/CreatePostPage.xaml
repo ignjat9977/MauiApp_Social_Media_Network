@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaNetwork.CreatePostPage"
+             Title="CreatePostPage"
+             xmlns:locale="clr-namespace:MediaNetwork.ViewModels">
+
+    <ContentPage.BindingContext>
+        <locale:CreatePostPageViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Button BackgroundColor="Orange" Text="Back to Home" TextColor="White" Command="{Binding BackToHomeCommand}"/>
+
+
+        <Entry x:Name="Id" Text="{Binding Id}" IsVisible="false"/>
+
+        <Label Text="Create post" TextColor="Orange"/>
+
+        <Label Text="Title" TextColor="Orange"/>
+        <Entry x:Name="Title" Text="{Binding Title.Value}"/>
+        <Label TextColor="Red" Text="{Binding Title.Error}"/>
+
+        <Label Text="Content" TextColor="Orange"/>
+        <Entry x:Name="Content" Text="{Binding Content.Value}"/>
+        <Label TextColor="Red" Text="{Binding Content.Error}"/>
+
+        <Button IsEnabled="{Binding IsCreateButtonEnabled}" Command="{Binding CreatePostCommand}" Text="Create"/>
+    </VerticalStackLayout>
+</ContentPage>

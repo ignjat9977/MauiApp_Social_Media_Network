@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaNetwork.FriendsPage"
+             xmlns:locale="clr-namespace:MediaNetwork.ViewModels"
+             Title="FriendsPage"
+             xmlns:components="clr-namespace:MediaNetwork.Business.Components">
+    
+            
+
+    <ContentPage.BindingContext>
+        <locale:FriendsViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView HorizontalOptions="FillAndExpand">
+        <VerticalStackLayout>
+            <Label VerticalOptions="Center" HorizontalOptions="Center"
+            Text="Friends"/>
+            <CollectionView HorizontalOptions="FillAndExpand" x:Name="collectionView"
+                ItemsSource="{Binding Friends}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="Go to Friend Page"
+                                   IconImageSource="favorite.png"
+                                   BackgroundColor="LightGreen"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.GoToFriendPageCommand}"
+                                   CommandParameter="{Binding}" />
+                                    <SwipeItem Text="Delete"
+                                   IconImageSource="delete.png"
+                                   BackgroundColor="LightPink"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.DeleteFriendCommand}"
+                                   CommandParameter="{Binding}" />
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <components:Friend FirstName="{Binding FirstName}"
+                                               LastName="{Binding LastName}"
+                                               ImageUrl="{Binding ImageUrl}"/>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

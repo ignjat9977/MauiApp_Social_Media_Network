@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:MediaNetwork"
+            x:Class="MediaNetwork.HomePage">
+    <local:UserProfilePage Title="Profile"/>
+    <local:SearchPage Title="Search"/>
+    <local:FriendsPage  Title="Friends"/>
+    <local:GroupPage  Title="Groups"/>
+</TabbedPage>

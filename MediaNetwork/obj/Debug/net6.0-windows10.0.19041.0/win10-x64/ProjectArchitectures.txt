@@ -1,0 +1,1 @@
+C:\Users\ignja\Desktop\Android\MediaNetwork\MediaNetwork\MediaNetwork.csproj;x64

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaNetwork.GroupPage"
+             xmlns:locale="clr-namespace:MediaNetwork.ViewModels"
+             Title="GroupPage">
+
+    <ContentPage.BindingContext>
+        <locale:GroupPageViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+
+        <VerticalStackLayout>
+            <Label 
+            Text="Search Groups"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <Entry Text="{Binding Keyword.Value}" Placeholder="Search by keyword"/>
+            <Picker Title="Select a Page"
+                        ItemsSource="{Binding Pagination}"
+                        ItemDisplayBinding="{Binding CurrentPage}" 
+                        SelectedItem="{Binding SelectedItem.Value}"/>
+            <Button Text="Search" BackgroundColor="Orange" TextColor="White" Command="{Binding SearchCommand}"/>
+            <CollectionView x:Name="collectionView"
+                ItemsSource="{Binding Groups.Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="See Group"
+                                   IconImageSource="favorite.png"
+                                   BackgroundColor="LightGreen"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.GoToGroupPageCommand}"
+                                   CommandParameter="{Binding}" />
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <Grid BackgroundColor="White"
+                      Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label Text="{Binding Name}"  Grid.Column="0" Grid.Row="0"/>
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

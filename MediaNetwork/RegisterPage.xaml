@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:locale="clr-namespace:MediaNetwork.ViewModels"
+             x:Class="MediaNetwork.RegisterPage"
+             Title="RegisterPage">
+
+    <ContentPage.BindingContext>
+        <locale:RegisterVIewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid>
+                <Rectangle Fill="Orange" Width="1000" Height="200" />
+                <Image Source="wd_logo.png" Width="100" Height="100" Margin="10" />
+            </Grid>
+            <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+            >
+
+
+                <Label Text="Register here!" TextColor="Orange" FontSize="Medium" Margin="0,20,0,0"/>
+
+                <Label Text="Your Email"/>
+                <Entry Text="{Binding Email.Value}" x:Name="Email" Placeholder="Enter your email here!" PlaceholderColor="Orange"/>
+                <Label TextColor="Red" Text="{Binding Email.Error}"/>
+
+                <Label Text="Your Password"/>
+                <Entry IsPassword="True" x:Name="Password" Text="{Binding Password.Value}" Placeholder="Enter your password here!" PlaceholderColor="Orange"/>
+                <Label TextColor="Red"  Text="{Binding Password.Error}"/>
+
+                <Label Text="Your First Name"/>
+                <Entry Text="{Binding FirstName.Value}" x:Name="FirstName" Placeholder="Enter your first name here!" PlaceholderColor="Orange"/>
+                <Label TextColor="Red" Text="{Binding FirstName.Error}"/>
+
+                <Label Text="Your Last Name"/>
+                <Entry Text="{Binding LastName.Value}" x:Name="LastName" Placeholder="Enter your last name here!" PlaceholderColor="Orange"/>
+                <Label TextColor="Red" Text="{Binding LastName.Error}"/>
+
+                <Label Text="Your Date of Birth"/>
+                <DatePicker x:Name="DateOfBirth" Date="{Binding DateOfBirth}" 
+                        MaximumDate="12/31/2020"/>
+
+                <Button 
+                x:Name="RegisterBtn"
+                Text="Register"
+                IsEnabled="{Binding IsRegisterBtnEneblaed}"
+                Clicked="RegisterBtn_Clicked"
+                BackgroundColor="Orange"
+                HorizontalOptions="Center"
+                />
+
+                <Button
+                x:Name="LogInBtn"
+                Text="Log in"
+                Clicked="LogInBtn_Clicked"
+                BackgroundColor="Orange"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+        
+    </ScrollView>
+</ContentPage>

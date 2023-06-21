@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:locale="clr-namespace:MediaNetwork.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaNetwork.MainPage">
+
+    <ContentPage.BindingContext>
+        <locale:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid>
+                <Rectangle Fill="Orange" Width="1000" Height="200" />
+                <Image Source="wd_logo.png" Width="100" Height="100" Margin="10" />
+            </Grid>
+            <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+                <Label Text="Log in" TextColor="Orange" FontSize="Medium" Margin="0,20,0,0"/>
+
+                <Label Text="Your Email"/>
+                <Entry Placeholder="Enter you email here!" PlaceholderColor="Orange" x:Name="Email" Text="{Binding Email.Value}"/>
+                <Label TextColor="Red" Text="{Binding Email.Error}"/>
+
+                <Label Text="Your Password"/>
+                <Entry Placeholder="Enter your password here!" PlaceholderColor="Orange" x:Name="Password" IsPassword="True" Text="{Binding Password.Value}"/>
+                <Label TextColor="Red"  Text="{Binding Password.Error}"/>
+
+                <Label x:Name="ErrorLogIn" IsEnabled="False" TextColor="Red"/>
+
+                <Button
+                x:Name="LogInBtn"
+                Text="Log in"
+                IsEnabled="{Binding IsLoginButtonEnabled}"
+                Clicked="LogInBtn_Clicked"
+                BackgroundColor="Orange"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Center" />
+                <Button 
+                x:Name="RegisterBtn"
+                Text="Register"
+                Clicked="RegisterBtn_Clicked"
+                BackgroundColor="Orange"
+                HorizontalOptions="Center"
+                />
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+      
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaNetwork.SearchPage"
+             Title="SearchPage"
+             xmlns:locale="clr-namespace:MediaNetwork.ViewModels"
+             xmlns:components="clr-namespace:MediaNetwork.Business.Components">
+
+
+    <ContentPage.BindingContext>
+        <locale:SearchPageViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView HorizontalOptions="FillAndExpand">
+    <VerticalStackLayout>
+        <Label 
+            Text="Search People"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        
+            <VerticalStackLayout>
+                <Label VerticalOptions="Center" HorizontalOptions="Center"
+            Text="Users"/>
+                <Entry Text="{Binding Keyword.Value}"/>
+                <Picker Title="Select a Page"
+                        ItemsSource="{Binding Pagination}"
+                        ItemDisplayBinding="{Binding CurrentPage}" 
+                        SelectedItem="{Binding SelectedItem.Value}"/>
+                <Button Command="{Binding SearchUsers}" Text="Search Users"/>
+                <CollectionView HorizontalOptions="FillAndExpand" x:Name="collectionView"
+                ItemsSource="{Binding PRUsers.Items}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <SwipeView>
+                                <SwipeView.LeftItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Add Friend"
+                                   IconImageSource="favorite.png"
+                                   BackgroundColor="LightGreen"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.AddFriendCommand}"
+                                   CommandParameter="{Binding}" />
+                                        <SwipeItem Text="Go to this profile"
+                                   IconImageSource="delete.png"
+                                   BackgroundColor="Orange"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.GoToFriendsPageCommand}"
+                                   CommandParameter="{Binding}" />
+                                    </SwipeItems>
+                                </SwipeView.LeftItems>
+                                <components:Friend FirstName="{Binding FirstName}"
+                                               LastName="{Binding LastName}"
+                                               ImageUrl="{Binding ImageUrl}"/>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Label Text="No Items" IsVisible="{Binding AnyItems.Value}"/>
+            </VerticalStackLayout>
+       
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
